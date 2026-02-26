@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Laxmi ❤️</title>
+    <link rel="stylesheet" href="Design.css">
+    <link rel="stylesheet" href="overlay-enhancements.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+
+    <!-- Stars Container for Night Sky -->
+    <div class="stars-container" id="stars-container"></div>
+
+    <!-- Fireflies Container -->
+    <div class="fireflies-container" id="fireflies-container"></div>
+
+    <!-- Overlay -->
+    <div id="overlay">
+        <!-- Aurora Background Effect -->
+        <div class="aurora-container">
+            <div class="aurora aurora-1"></div>
+            <div class="aurora aurora-2"></div>
+            <div class="aurora aurora-3"></div>
+        </div>
+        
+        <!-- Vignette Effect -->
+        <div class="vignette"></div>
+        
+        <!-- Enhanced Animated Background -->
+        <div class="animated-bg">
+            <div class="overlay-heart" style="left: 10%; animation-delay: 0s;">❤️</div>
+            <div class="overlay-sparkle" style="left: 20%; animation-delay: 1s;">✨</div>
+            <div class="overlay-heart" style="left: 30%; animation-delay: 2s;">💖</div>
+            <div class="overlay-sparkle" style="left: 40%; animation-delay: 3s;">🌟</div>
+            <div class="overlay-heart" style="left: 50%; animation-delay: 4s;">❤️</div>
+            <div class="overlay-sparkle" style="left: 60%; animation-delay: 5s;">✨</div>
+            <div class="overlay-heart" style="left: 70%; animation-delay: 6s;">💖</div>
+            <div class="overlay-sparkle" style="left: 80%; animation-delay: 7s;">🌟</div>
+            <div class="overlay-heart" style="left: 90%; animation-delay: 8s;">❤️</div>
+        </div>
+        
+        <!-- Floating Lanterns -->
+        <div class="lanterns-container" id="lanterns-container"></div>
+        
+        <!-- Main Content Container -->
+        <div class="overlay-content">
+            <h2 class="title-text">A Small Surprise for Laxmi...</h2>
+            <p class="subtitle-text">Click to unwrap your gift ✨</p>
+            
+            <!-- Gift Box -->
+            <div class="gift-box-container" onclick="initWithTimeCheck()">
+                <div class="gift-box">
+                    <div class="gift-box-lid">
+                        <div class="gift-ribbon-vertical"></div>
+                    </div>
+                    <div class="gift-box-body">
+                        <div class="gift-ribbon-vertical"></div>
+                    </div>
+                    <div class="gift-bow">
+                        <div class="bow-left"></div>
+                        <div class="bow-center"></div>
+                        <div class="bow-right"></div>
+                    </div>
+                    <div class="gift-sparkles">
+                        <span class="sparkle s1">✨</span>
+                        <span class="sparkle s2">⭐</span>
+                        <span class="sparkle s3">💫</span>
+                        <span class="sparkle s4">✨</span>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="start-btn pulse-btn" onclick="init()" id="open-btn">
+                <span class="btn-text">Open Gift</span>
+                <span class="btn-icon">🎁</span>
+            </button>
+            
+            <!-- Click Hint -->
+            <p class="click-hint">or press Enter ↵</p>
+        </div>
+        
+        <!-- Interactive Surprise Elements -->
+        <div class="surprise-element se-1" onclick="createSurpriseBurst(this)">💝</div>
+        <div class="surprise-element se-2" onclick="createSurpriseBurst(this)">🌟</div>
+        <div class="surprise-element se-3" onclick="createSurpriseBurst(this)">💖</div>
+        <div class="surprise-element se-4" onclick="createSurpriseBurst(this)">✨</div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-content">
+        <h1 id="birthday-title" onclick="showSecretSurprise()">Happy Birthday Laxmi! 🎂</h1>
+        <p class="sub-text">"The world is lucky to have you."</p>
+
+        <!-- Photo Gallery with Glassmorphism -->
+        <div class="gallery">
+            <div class="card" style="--r: -5" onclick="toggleFrame(this)">
+                <img src="photograps/11.jpg" alt="Laxmi">
+                <p class="message">That beautiful smile! ✨</p>
+                <div class="frame-overlay">
+                    <span class="frame-heart">❤️</span>
+                    <span class="frame-sparkle top-left">✨</span>
+                    <span class="frame-sparkle top-right">✨</span>
+                    <span class="frame-sparkle bottom-left">✨</span>
+                    <span class="frame-sparkle bottom-right">✨</span>
+                </div>
+            </div>
+            <div class="card" style="--r: 3" onclick="toggleFrame(this)">
+                <img src="photograps/5.jpg" alt="Laxmi">
+                <p class="message">I don't just like you, I truly cherish every moment with you.</p>
+                <div class="frame-overlay">
+                    <span class="frame-heart">❤️</span>
+                    <span class="frame-sparkle top-left">✨</span>
+                    <span class="frame-sparkle top-right">✨</span>
+                    <span class="frame-sparkle bottom-left">✨</span>
+                    <span class="frame-sparkle bottom-right">✨</span>
+                </div>
+            </div>
+            <div class="card" style="--r: -2" onclick="toggleFrame(this)">
+                <img src="photograps/4.jpg" alt="Laxmi">
+                <p class="message">Tumhari ek muskurahat mera poora din bana deti hai. ✨</p>
+                <div class="frame-overlay">
+                    <span class="frame-heart">❤️</span>
+                    <span class="frame-sparkle top-left">✨</span>
+                    <span class="frame-sparkle top-right">✨</span>
+                    <span class="frame-sparkle bottom-left">✨</span>
+                    <span class="frame-sparkle bottom-right">✨</span>
+                </div>
+            </div>
+            <div class="card" style="--r: 4" onclick="toggleFrame(this)">
+                <img src="photograps/1.jpg" alt="Laxmi">
+                <p class="message">Thank you for being you! 🎉</p>
+                <div class="frame-overlay">
+                    <span class="frame-heart">❤️</span>
+                    <span class="frame-sparkle top-left">✨</span>
+                    <span class="frame-sparkle top-right">✨</span>
+                    <span class="frame-sparkle bottom-left">✨</span>
+                    <span class="frame-sparkle bottom-right">✨</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Audio -->
+        <audio id="myAudio" loop>
+            <source src="music/untilifounnd.mp3" type="audio/mpeg">
+        </audio>
+
+        <!-- Action Buttons -->
+        <div class="buttons-container">
+            <button id="celebrate-btn" class="start-btn" onclick="celebrate()">Celebrate 🎉</button>
+            <button id="love-note-btn" class="start-btn" onclick="openLoveNote()">Love Note 💌</button>
+            <button id="card-btn" class="start-btn" onclick="openGreetingCard()">Greeting Card 🎴</button>
+            <button id="wish-btn" class="start-btn" onclick="openWishGenerator()">Make a Wish ✨</button>
+            <button id="quiz-btn" class="start-btn" onclick="openQuiz()">Quiz ❓</button>
+            <button id="memory-btn" class="start-btn" onclick="openMemoryLane()">Memory Lane 📸</button>
+            <button id="cake-btn" class="start-btn" onclick="openCakeModal()">Cut Cake 🎂</button>
+        </div>
+    </div>
+
+    <!-- Love Note Modal -->
+    <div id="love-note-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeLoveNote()">✕</button>
+            <h2 class="love-title">A Letter from Nilesh 💕</h2>
+            <div class="love-text" id="love-text"></div>
+        </div>
+    </div>
+
+    <!-- Greeting Card Modal -->
+    <div id="greeting-card-modal" class="modal" style="display: none;">
+        <div class="card-wrapper">
+            <button class="close-btn" onclick="closeGreetingCard()">✕</button>
+            <div class="instagram-card" id="instagram-card">
+                <div class="card-bg"></div>
+                <img src="photograps/2.jpg" alt="Laxmi" class="card-photo">
+                <div class="card-content">
+                    <h1 class="card-title">Happy Birthday</h1>
+                    <p class="card-name">Laxmi</p>
+                    <p class="card-wish">some people bring so much light into our lives that just knowing them is a gift. 
+                        You are that person for me. I may not be a part of your destination, 
+                        but I will always be a silent prayer in your journey.
+                         I wish you a life filled with the same kindness and joy you give to others. 
+                         Happy Birthday. Always stay as amazing as you are.</p>
+                    <p class="card-from">— Nilesh</p>
+                </div>
+            </div>
+            <button class="download-btn" onclick="downloadCard()">📥 Download for Instagram</button>
+            <!-- Social Share Buttons -->
+            <div class="share-container">
+                <button class="share-btn whatsapp" onclick="shareOnWhatsapp()">💬</button>
+                <button class="share-btn twitter" onclick="shareOnTwitter()">🐦</button>
+                <button class="share-btn facebook" onclick="shareOnFacebook()">📘</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wish Generator Modal -->
+    <div id="wish-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeWishGenerator()">✕</button>
+            <h2 class="love-title">Make a Wish! ⭐</h2>
+            <div class="wish-display" id="wish-display">Click the button to generate a wish...</div>
+            <div class="wish-buttons">
+                <button class="start-btn" onclick="generateWish()">Generate Wish 💫</button>
+                <button class="start-btn" onclick="closeWishGenerator()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quiz Modal -->
+    <div id="quiz-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeQuiz()">✕</button>
+            <button class="restart-btn" onclick="openQuiz()" title="Restart Quiz">🔄</button>
+            <h2 class="love-title">How well do you know Laxmi? 🤔</h2>
+            <div class="quiz-container" id="quiz-container">
+                <!-- Quiz questions will be added by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Memory Lane Modal -->
+    <div id="memory-modal" class="modal" style="display: none;">
+        <div class="modal-content" style="max-width: 800px;">
+            <button class="close-btn" onclick="closeMemoryLane()">✕</button>
+            <h2 class="love-title">Memory Lane 📸</h2>
+            <div class="memory-container">
+                <div class="memory-track">
+                    <div class="memory-card">
+                        <img src="photograps/1.jpg" alt="Memory 2">
+                    </div>
+                    <div class="memory-card">
+                        <img src="photograps/3.jpg" alt="Memory 3">
+                    </div>
+                    <div class="memory-card">
+                        <img src="photograps/4.jpg" alt="Memory 4">
+                    </div>
+                    <div class="memory-card">
+                        <img src="photograps/5.jpg" alt="Memory 5">
+                    </div>
+                    <div class="memory-card">
+                        <img src="photograps/6.jpg" alt="Memory 6">
+                    </div>
+                    <div class="memory-card">
+                        <img src="photograps/7.jpg" alt="Memory 7">
+                    </div>
+                    <div class="memory-card">
+                        <img src="photograps/8.jpg" alt="Memory 8">
+                    </div>
+                    <div class="memory-card">
+                        <img src="photograps/9.jpg" alt="Memory 9">
+                    </div>
+                    <div class="memory-card">
+                        <img src="photograps/10.jpg" alt="Memory 10">
+                    </div>
+                    <div class="memory-card">
+                        <img src="photograps/11.jpg" alt="Memory 11">
+                    </div>
+                    <div class="memory-card">
+                        <img src="photograps/12.jpg" alt="Memory 12">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cake Cutting Modal -->
+    <div id="cake-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeCakeModal()">✕</button>
+            <h2 class="love-title">Time to Cut the Cake! 🎂</h2>
+            <div class="cake-container">
+                <div class="cake" onclick="cutCake()">🎂</div>
+                <p class="cake-message" id="cake-message">Click the cake to cut it!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Secret Surprise Message -->
+    <div id="secret-message" class="secret-message" style="display: none;">
+        <h2>🎉 Surprise! 🎉</h2>
+        <p>Happy Birthday Laxmi! 🎂💕<br><br>
+        You are the most amazing person I know.<br>
+        May your life be filled with joy, love, and all your dreams come true!<br><br>
+        From your Nilesh with love ❤️</p>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Made with ❤️ by Nilesh | <a href="https.instagram.com/just_nilesh098" target="_blank" rel="noopener noreferrer" class="insta-link">@just_nilesh098</a></p>
+    </footer>
+
+    <script src="logic.js"></script>
+    <button id="corner-btn" class="corner-btn" onclick="cornerAction()" title="Toggle music">🔊</button>
+</body>
+</html>

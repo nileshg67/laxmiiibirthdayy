@@ -1,0 +1,75 @@
+
+/* overlay-enhancements.css */
+
+#overlay .animated-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.overlay-heart {
+    position: absolute;
+    font-size: 20px;
+    color: #ff4d6d;
+    animation: floatUp 6s linear infinite;
+}
+
+.overlay-sparkle {
+    position: absolute;
+    font-size: 16px;
+    color: #ffd166;
+    animation: sparkleFloat 5s linear infinite;
+}
+
+@keyframes floatUp {
+    from {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-10vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes sparkleFloat {
+    from {
+        transform: translateY(100vh) rotate(0deg) scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-10vh) rotate(360deg) scale(0.3);
+        opacity: 0;
+    }
+}
+
+.gift-bow {
+    position: absolute;
+    top: -20px;
+    font-size: 40px;
+    color: #ff4d6d;
+    transform: rotate(-15deg);
+}
+
+.pulse-btn {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 77, 109, 0.7);
+    }
+    70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 20px rgba(255, 77, 109, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 77, 109, 0);
+    }
+}
